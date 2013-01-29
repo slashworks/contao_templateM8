@@ -33,13 +33,16 @@
  * Table tl_content
  */
 
-foreach($GLOBALS['TL_DCA']['tl_content']['palettes'] as $k => $v)
+$GLOBALS['TL_DCA']['tl_content']['palettes']['text'] = $GLOBALS['TL_DCA']['tl_content']['palettes']['text'].',templateMate;';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['image'] = $GLOBALS['TL_DCA']['tl_content']['palettes']['image'].',templateMate;';
+
+/*foreach($GLOBALS['TL_DCA']['tl_content']['palettes'] as $k => $v)
 {
     if(!is_array($v))
     {
         $GLOBALS['TL_DCA']['tl_content']['palettes'][$k] .= ',templateMate;';
     }
-}
+}*/
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['templateMate'] = array
 (
@@ -68,6 +71,6 @@ class tl_templateMate extends Backend
 
         }
 
-        return array($r);
+        return $r;
     }
 }
