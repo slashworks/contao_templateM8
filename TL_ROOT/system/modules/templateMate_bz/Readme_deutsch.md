@@ -3,12 +3,12 @@ Dieses Modul ermöglicht das nutzen von mehreren Templates pro Content Element.
 Unterstützt werden contao 2.11.x bis 3.x
 
 ## Instalation ##
-1. Lade das Modul runter und entpacke es unter system/modules.
-2. Führe ein datenbank Update mit dem Install Tool durch.
+1. Entpacke das Modul in system/modules.
+2. Führe eine Datenbankaktualisierung mit dem Installations Werkzeug von Contao durch.
 
 ## Quickstart ##
 
-1. Kopiere dir Copy das template ce_text.html5 in das /templates Verzeichnis und bennene es in ce_text_test.html5 um
+1. Kopiere dir das template ce_text.html5 in das /templates Verzeichnis und bennene es in ce_text_test.html5 um
 2. Öffne das Template ce_text_test.html5 und nimm ein Paar Änderungen vor wie z.b. einen p Tag mit dem Inhalt "Test"
 3. Gehe ins Backend und lege in einem beliebigen artikel ein Content Element an.
 4. Ganz am Ende findest du nun die Sektion TemplateMate. In der Selectbox kannst du nun zwischen den Templates Standard Template und ce_text_test wählen. Wähle ce_text_test und speichere die Änderungen.
