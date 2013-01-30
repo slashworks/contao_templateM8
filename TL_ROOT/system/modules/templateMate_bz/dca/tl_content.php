@@ -21,9 +21,9 @@
  * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
- * @copyright  Joe Ray Gregory @ borowiakziehe KG 2012
- * @author     Joe Ray Gregory @ borowiakziehe KG 2012 info@borowiakziehe.de
- * @package    Backend
+ * @copyright  Joe Ray Gregory @ borowiakziehe KG 2012 -2013
+ * @author     Joe Ray Gregory @ borowiakziehe KG 2012 -2013 info@borowiakziehe.de
+ * @package    TemplateMate
  * @license    LGPL
  * @filesource
  */
@@ -33,8 +33,8 @@
  * Table tl_content
  */
 
-$GLOBALS['TL_DCA']['tl_content']['palettes']['text'] = $GLOBALS['TL_DCA']['tl_content']['palettes']['text'].',templateMate;';
-$GLOBALS['TL_DCA']['tl_content']['palettes']['image'] = $GLOBALS['TL_DCA']['tl_content']['palettes']['image'].',templateMate;';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['text'] = $GLOBALS['TL_DCA']['tl_content']['palettes']['text'].';{templateMate_legend:hide},templateMate;';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['image'] = $GLOBALS['TL_DCA']['tl_content']['palettes']['image'].';{templateMate_legend:hide},templateMate;';
 
 /*foreach($GLOBALS['TL_DCA']['tl_content']['palettes'] as $k => $v)
 {

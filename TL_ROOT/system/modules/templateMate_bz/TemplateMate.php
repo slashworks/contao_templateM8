@@ -22,7 +22,5 @@ class TemplateMate
         {
             $objTemplate->setName($objTemplate->templateMate);
         }
-
-
     }
 }

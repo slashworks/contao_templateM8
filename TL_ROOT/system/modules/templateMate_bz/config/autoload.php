@@ -18,13 +18,3 @@ ClassLoader::addClasses(array
 (
 	'TemplateMate' => 'system/modules/templateMate_bz/TemplateMate.php',
 ));
-
-
-/**
- * Register the templates
- */
-TemplateLoader::addFiles(array
-(
-	'ce_text_accordion'  => 'system/modules/templateMate_bz/templates',
-	'ce_text_withSymbol' => 'system/modules/templateMate_bz/templates',
-));
