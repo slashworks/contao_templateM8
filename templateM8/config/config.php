@@ -7,4 +7,4 @@
  * To change this template use File | Settings | File Templates.
  */
 
-$GLOBALS['TL_HOOKS']['parseTemplate'][] = array('TemplateMate', 'parseTemplate');
+$GLOBALS['TL_HOOKS']['parseTemplate'][] = array('slashworks\TemplateM8Hooks', 'parseTemplate');

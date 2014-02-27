@@ -1,0 +1,2 @@
+<?php echo $this->tplName; ?>
+<?php echo $this->baseTpl; ?>

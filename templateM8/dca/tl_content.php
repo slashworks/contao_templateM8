@@ -36,39 +36,38 @@
 $GLOBALS['TL_DCA']['tl_content']['palettes']['text'] = $GLOBALS['TL_DCA']['tl_content']['palettes']['text'].';{templateMate_legend:hide},templateMate;';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['image'] = $GLOBALS['TL_DCA']['tl_content']['palettes']['image'].';{templateMate_legend:hide},templateMate;';
 
-/*foreach($GLOBALS['TL_DCA']['tl_content']['palettes'] as $k => $v)
+foreach($GLOBALS['TL_DCA']['tl_content']['palettes'] as $k => $v)
 {
     if(!is_array($v))
     {
-        $GLOBALS['TL_DCA']['tl_content']['palettes'][$k] .= ',templateMate;';
+        $GLOBALS['TL_DCA']['tl_content']['palettes'][$k] .= ',templateM8;';
     }
-}*/
+}
 
-$GLOBALS['TL_DCA']['tl_content']['fields']['templateMate'] = array
+$GLOBALS['TL_DCA']['tl_content']['fields']['templateM8'] = array
 (
-    'label'                   => &$GLOBALS['TL_LANG']['tl_content']['templateMate'],
+    'label'                   => &$GLOBALS['TL_LANG']['tl_content']['templateM8'],
     'exclude'                 => true,
     'filter'                  => true,
     'inputType'               => 'select',
     'options_callback'        => array('tl_templateMate', 'getTemplates'),
-    'eval'                    => array('tl_class'=>'clr')
+    'eval'                    => array('tl_class'=>'clr'),
+	'sql'                     => "varchar(255) NOT NULL default ''"
 );
 
 class tl_templateMate extends Backend
 {
     public function getTemplates(DataContainer $dc)
     {
-        $group = 'ce_'.$dc->activeRecord->type;
+        $group = 'm8_ce_'.$dc->activeRecord->type;
         $tplGroup = $this->getTemplateGroup($group);
         $r = array();
-        foreach($tplGroup as $template)
-        {
-            if($group === $template) {
-                $r[$template] = $GLOBALS['TL_LANG']['templateMate']['standard'];
-            } else {
-                $r[$template] = ($GLOBALS['TL_LANG']['templateMate'][$template]) ? $r[$template] = $GLOBALS['TL_LANG']['templateMate'][$template] : $template;
-            }
 
+        $r['ce_'.$dc->activeRecord->type] = $GLOBALS['TL_LANG']['templateMate']['standard'];
+
+        foreach($tplGroup as $key=>$val)
+        {
+            $r[$key] = ($GLOBALS['TL_LANG']['templateMate'][$val]) ? $r[$key] = $GLOBALS['TL_LANG']['templateMate'][$key] : $val;
         }
 
         return $r;
