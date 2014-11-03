@@ -33,9 +33,6 @@
  * Table tl_content
  */
 
-$GLOBALS['TL_DCA']['tl_content']['palettes']['text'] = $GLOBALS['TL_DCA']['tl_content']['palettes']['text'].';{templateMate_legend:hide},templateMate;';
-$GLOBALS['TL_DCA']['tl_content']['palettes']['image'] = $GLOBALS['TL_DCA']['tl_content']['palettes']['image'].';{templateMate_legend:hide},templateMate;';
-
 foreach($GLOBALS['TL_DCA']['tl_content']['palettes'] as $k => $v)
 {
     if(!is_array($v))
