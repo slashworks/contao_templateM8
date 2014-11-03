@@ -40,7 +40,7 @@ foreach($GLOBALS['TL_DCA']['tl_content']['palettes'] as $k => $v)
 {
     if(!is_array($v))
     {
-        $GLOBALS['TL_DCA']['tl_content']['palettes'][$k] .= ',templateM8;';
+        $GLOBALS['TL_DCA']['tl_content']['palettes'][$k] .= ';{templateMate_legend:hide},templateM8;';
     }
 }
 
