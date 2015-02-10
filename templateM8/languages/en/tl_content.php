@@ -27,7 +27,7 @@
  * @filesource
  */
 
-$GLOBALS['TL_LANG']['tl_content']['templateMate'] = array('Choose a template', 'Choose a template for this Content element');
-$GLOBALS['TL_LANG']['tl_content']['templateMate_legend'] = 'TemplateMate';
+$GLOBALS['TL_LANG']['tl_content']['templateM8'] = array('Choose a template', 'Choose a template for this Content element');
+$GLOBALS['TL_LANG']['tl_content']['templateM8_legend'] = 'TemplateMate';
 
 $GLOBALS['TL_LANG']['templateMate']['standard'] = 'Standard Template';

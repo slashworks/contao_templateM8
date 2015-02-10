@@ -33,14 +33,13 @@
  * Table tl_content
  */
 
-$GLOBALS['TL_DCA']['tl_content']['palettes']['text'] = $GLOBALS['TL_DCA']['tl_content']['palettes']['text'].';{templateMate_legend:hide},templateMate;';
-$GLOBALS['TL_DCA']['tl_content']['palettes']['image'] = $GLOBALS['TL_DCA']['tl_content']['palettes']['image'].';{templateMate_legend:hide},templateMate;';
-
 foreach($GLOBALS['TL_DCA']['tl_content']['palettes'] as $k => $v)
 {
     if(!is_array($v))
     {
-        $GLOBALS['TL_DCA']['tl_content']['palettes'][$k] .= ',templateM8;';
+
+        $GLOBALS['TL_DCA']['tl_content']['palettes'][$k] .= ';{templateM8_legend},templateM8;';
+
     }
 }
 
@@ -61,15 +60,17 @@ class tl_templateMate extends Backend
     {
         $group = 'm8_ce_'.$dc->activeRecord->type;
         $tplGroup = $this->getTemplateGroup($group);
-        $r = array();
+        $returnArr = array();
 
-        $r['ce_'.$dc->activeRecord->type] = $GLOBALS['TL_LANG']['templateMate']['standard'];
+        $returnArr['ce_'.$dc->activeRecord->type] = $GLOBALS['TL_LANG']['templateMate']['standard'];
 
         foreach($tplGroup as $key=>$val)
         {
-            $r[$key] = ($GLOBALS['TL_LANG']['templateMate'][$val]) ? $r[$key] = $GLOBALS['TL_LANG']['templateMate'][$key] : $val;
+
+            $returnArr[$key] = ($GLOBALS['TL_LANG']['templateMate'][$key]) ?  $GLOBALS['TL_LANG']['templateMate'][$key] : $val;
+
         }
 
-        return $r;
+        return $returnArr;
     }
 }

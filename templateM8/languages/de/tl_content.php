@@ -26,8 +26,7 @@
  * @license    LGPL
  * @filesource
  */
-
-$GLOBALS['TL_LANG']['tl_content']['templateMate'] = array('Template auswählen', 'Wählen Sie ein Template für dieses Content element');
-$GLOBALS['TL_LANG']['tl_content']['templateMate_legend'] = 'TemplateMate';
+$GLOBALS['TL_LANG']['tl_content']['templateM8'] = array('Template auswählen', 'Wählen Sie ein Template für dieses Content element');
+$GLOBALS['TL_LANG']['tl_content']['templateM8_legend'] = 'TemplateMate';
 
 $GLOBALS['TL_LANG']['templateMate']['standard'] = 'Standard Template';
