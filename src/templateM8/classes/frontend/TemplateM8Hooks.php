@@ -18,4 +18,22 @@
  *
  */
 
-$GLOBALS['TL_HOOKS']['parseTemplate'][] = array('Slashworks\TemplateM8\Classes\Backend\TemplateM8Hooks', 'parseTemplate');
+namespace Slashworks\TemplateM8\Classes\Backend;
+
+class TemplateM8Hooks
+{
+    /**
+     * Hook into parsTemplates and add new templates
+     * @param $objTemplate
+     */
+    public function parseTemplate($objTemplate)
+    {
+
+        if(TL_MODE === 'FE') {
+            if (($objTemplate->templateM8 != '' && substr( $objTemplate->templateM8, 0, 3 ) === "m8_"))
+            {
+                $objTemplate->setName($objTemplate->templateM8);
+            }
+        }
+    }
+}

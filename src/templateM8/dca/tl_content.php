@@ -1,37 +1,28 @@
-<?php if (!defined('TL_ROOT')) die('You cannot access this file directly!');
-
+<?php
 /**
- * Contao Open Source CMS
- * Copyright (C) 2005-2012 Leo Feyer
  *
- * Formerly known as TYPOlight Open Source CMS.
+ *          _           _                       _
+ *         | |         | |                     | |
+ *      ___| | __ _ ___| |____      _____  _ __| | _____
+ *     / __| |/ _` / __| '_ \ \ /\ / / _ \| '__| |/ / __|
+ *     \__ \ | (_| \__ \ | | \ V  V / (_) | |  |   <\__ \
+ *     |___/_|\__,_|___/_| |_|\_/\_/ \___/|_|  |_|\_\___/
+ *                                        web development
  *
- * This program is free software: you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation, either
- * version 3 of the License, or (at your option) any later version.
+ *     http://www.slash-works.de </> hallo@slash-works.de
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * Lesser General Public License for more details.
  *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this program. If not, please visit the Free
- * Software Foundation website at <http://www.gnu.org/licenses/>.
+ * @author      jrgregory <joe@slash-works.de>
+ * @since       15.10.2015
+ * @package     templateM8
  *
- * PHP version 5
- * @copyright  Joe Ray Gregory @ borowiakziehe KG 2012 -2013
- * @author     Joe Ray Gregory @ borowiakziehe KG 2012 -2013 info@borowiakziehe.de
- * @package    TemplateMate
- * @license    LGPL
- * @filesource
  */
-
 
 /**
  * Table tl_content
  */
+
+$GLOBALS['TL_DCA']['tl_content']['config']['onload_callback'][] = array('Slashworks\TemplateM8\Classes\Backend\DcaTemplateM8', 'resetTemplate');
 
 foreach($GLOBALS['TL_DCA']['tl_content']['palettes'] as $k => $v)
 {
@@ -49,28 +40,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['templateM8'] = array
     'exclude'                 => true,
     'filter'                  => true,
     'inputType'               => 'select',
-    'options_callback'        => array('tl_templateMate', 'getTemplates'),
+    'options_callback'        => array('Slashworks\TemplateM8\Classes\Backend\DcaTemplateM8', 'getTemplates'),
     'eval'                    => array('tl_class'=>'clr'),
 	'sql'                     => "varchar(255) NOT NULL default ''"
 );
-
-class tl_templateMate extends Backend
-{
-    public function getTemplates(DataContainer $dc)
-    {
-        $group = 'm8_ce_'.$dc->activeRecord->type;
-        $tplGroup = $this->getTemplateGroup($group);
-        $returnArr = array();
-
-        $returnArr['ce_'.$dc->activeRecord->type] = $GLOBALS['TL_LANG']['templateMate']['standard'];
-
-        foreach($tplGroup as $key=>$val)
-        {
-
-            $returnArr[$key] = ($GLOBALS['TL_LANG']['templateMate'][$key]) ?  $GLOBALS['TL_LANG']['templateMate'][$key] : $val;
-
-        }
-
-        return $returnArr;
-    }
-}
