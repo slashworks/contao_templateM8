@@ -38,7 +38,6 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['templateM8'] = array
 (
     'label'                   => &$GLOBALS['TL_LANG']['tl_content']['templateM8'],
     'exclude'                 => true,
-    'filter'                  => true,
     'inputType'               => 'select',
     'options_callback'        => array('Slashworks\TemplateM8\Classes\Backend\DcaTemplateM8', 'getTemplates'),
     'eval'                    => array('tl_class'=>'clr'),
